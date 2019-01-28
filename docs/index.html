@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.min.css">
+    <title>Scrap Web IDE</title>
+    <style>
+        .header {
+            width: 50%;
+            display: flex;
+            flex-direction: "row";
+        }
+        .containers {
+            display: flex;
+            flex-direction: "row"
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <input type="text" placeholder="https://www.yoursitetograb.com"/>
+        <button class="button button-outline">Fetch html</button>
+        <button class="button button">Scrap!</button>
+    </div>
+
+    <div class="containers">
+        <div id="html-container" style="width: 50%; height: 500px;"></div>
+        <div id="scrapq-container" style="width: 50%; height: 500px;"></div>
+    </div>
+
+    <!-- monaco editor -->
+    <script src="./css.worker.js"></script>
+    <script src="./editor.worker.js"></script>
+    <script src="./html.worker.js"></script>
+    <script src="./json.worker.js"></script>
+    <script src="./typescript.worker.js"></script>
+
+    <!-- application -->
+    <script src="./app.js"></script>
+    <script src="./resources/js/scrapq.min.js"></script>
+</body>
+</html>
