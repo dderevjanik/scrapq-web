@@ -22,25 +22,26 @@
 <body>
 
     <div class="header">
-        <input type="text" placeholder="https://www.yoursitetograb.com"/>
-        <button class="button button-outline">Fetch html</button>
-        <button class="button button">Scrap!</button>
+        <!-- <input id="input-url" type="text" placeholder="https://www.yoursitetograb.com"/> -->
+        <!-- <button id="btn-fetch" class="button button-outline">Fetch html</button> -->
+        <button id="btn-scrap" class="button button">Scrap!</button>
     </div>
 
     <div class="containers">
         <div id="html-container" style="width: 50%; height: 500px;"></div>
         <div id="scrapq-container" style="width: 50%; height: 500px;"></div>
     </div>
+    <div id="result-container" style="width: 100%; height: 400px"></div>
 
     <!-- monaco editor -->
-    <script src="./css.worker.js"></script>
+    <script src="./app.js"></script>
     <script src="./editor.worker.js"></script>
+    <script src="./css.worker.js"></script>
     <script src="./html.worker.js"></script>
     <script src="./json.worker.js"></script>
     <script src="./typescript.worker.js"></script>
 
     <!-- application -->
-    <script src="./app.js"></script>
     <script src="./resources/js/scrapq.min.js"></script>
 </body>
 </html>

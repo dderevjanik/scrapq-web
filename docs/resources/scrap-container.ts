@@ -1,8 +1,8 @@
-const result = scrapq.scrap(html, {
-    title: Q.text('h1.title'),
-    items: Q.List('li', {
-        text: Q.text('span'),
+scrapq.scrap(html, {
+    title: scrapq.text('h1.title'),
+    items: scrapq.List('li', {
+        text: scrapq.text('span'),
     }),
-    readMore: Q.text('a'),
-    footer: Q.text('div.footer')
-})
+    readMore: scrapq.text('a'),
+    footer: scrapq.text('div.footer')
+});
