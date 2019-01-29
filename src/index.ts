@@ -89,6 +89,6 @@ window.onload = async () => {
   });
 
   // load init data
-  getTxtFromUrl("/resources/html-container.html").then((res) => htmlContainer.setValue(res));
-  getTxtFromUrl("/resources/scrap-container.ts").then((res) => scrapContainer.setValue(res));
+  getTxtFromUrl(window.location.href + "resources/html-container.html").then((res) => htmlContainer.setValue(res));
+  getTxtFromUrl(window.location.href + "resources/scrap-container.ts").then((res) => scrapContainer.setValue(res));
 }
