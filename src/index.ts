@@ -89,6 +89,6 @@ window.onload = async () => {
   });
 
   // load init data
-  getTxtFromUrl("http://localhost:8080/resources/html-container.html").then((res) => htmlContainer.setValue(res));
-  getTxtFromUrl("http://localhost:8080/resources/scrap-container.ts").then((res) => scrapContainer.setValue(res));
+  getTxtFromUrl("/resources/html-container.html").then((res) => htmlContainer.setValue(res));
+  getTxtFromUrl("/resources/scrap-container.ts").then((res) => scrapContainer.setValue(res));
 }
