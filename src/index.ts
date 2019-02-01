@@ -33,6 +33,10 @@ function getHtmlDocFromUrl(url) {
 
 
 window.onload = async () => {
+
+  window.scrap = scrapq.scrap;
+  window.$ = scrapq.$;
+
   async function onFetch() {
     console.log("fetching ...");
     const url = await inputEl["value"];
@@ -44,7 +48,10 @@ window.onload = async () => {
     console.log("scraping ...");
     const htmlToScrap = htmlContainer.getValue();
     const scrapCode = scrapContainer.getValue();
+
+    resultContainer.setValue(""); // resest result container
     window["html"] = htmlToScrap;
+
     const result = eval(scrapCode);
     const prettyResult = JSON.stringify(result, null, 2);
     resultContainer.setValue(prettyResult);
@@ -91,4 +98,7 @@ window.onload = async () => {
   // load init data
   getTxtFromUrl(window.location.href + "resources/html-container.html").then((res) => htmlContainer.setValue(res));
   getTxtFromUrl(window.location.href + "resources/scrap-container.ts").then((res) => scrapContainer.setValue(res));
+  getTxtFromUrl("https://unpkg.com/scrapq@1.3.1/dist/dist.d.ts").then((res) => {
+    monaco.languages.typescript.typescriptDefaults.addExtraLib(res);
+  });
 }

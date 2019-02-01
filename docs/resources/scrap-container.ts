@@ -1,8 +1,10 @@
-scrapq.scrap(html, {
-    title: scrapq.text('h1.title'),
-    items: scrapq.List('li', {
-        text: scrapq.text('span'),
+import { scrap, $ } from "index";
+
+scrap(html, {
+    title: $.text('h1.title'),
+    items: $.list('li', {
+        text: $.text('span'),
     }),
-    readMore: scrapq.text('a'),
-    footer: scrapq.text('div.footer')
+    readMore: $.text('a'),
+    footer: $.text('div.footer')
 });
