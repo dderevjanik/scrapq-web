@@ -52,7 +52,9 @@ window.onload = async () => {
     resultContainer.setValue(""); // resest result container
     window["html"] = htmlToScrap;
 
-    const result = eval(scrapCode);
+    const scrapCodeNoImports = scrapCode.replace(new RegExp(/^import.*$/, 'gm'), '');
+
+    const result = eval(scrapCodeNoImports);
     const prettyResult = JSON.stringify(result, null, 2);
     resultContainer.setValue(prettyResult);
   }
