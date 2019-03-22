@@ -1,4 +1,4 @@
-import { scrap, $ } from "index";
+import { scrap, $ } from "scrapq";
 
 scrap(html, {
     title: $.text('h1.title'),

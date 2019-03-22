@@ -100,7 +100,7 @@ window.onload = async () => {
   // load init data
   getTxtFromUrl(window.location.href + "resources/html-container.html").then((res) => htmlContainer.setValue(res));
   getTxtFromUrl(window.location.href + "resources/scrap-container.ts").then((res) => scrapContainer.setValue(res));
-  getTxtFromUrl("https://unpkg.com/scrapq@1.3.1/dist/dist.d.ts").then((res) => {
+  getTxtFromUrl("https://unpkg.com/scrapq@1.3.4/dist/scrapq.d.ts").then((res) => {
     monaco.languages.typescript.typescriptDefaults.addExtraLib(res);
   });
 }
